@@ -1652,7 +1652,7 @@ export function isEmbeddingModel(model: Model): boolean {
     return EMBEDDING_REGEX.test(model.name)
   }
 
-  return EMBEDDING_REGEX.test(model.id) || model.type?.includes('embedding') || false
+  return EMBEDDING_REGEX.test(model.id) || false
 }
 
 export function isVisionModel(model: Model): boolean {
@@ -1661,10 +1661,10 @@ export function isVisionModel(model: Model): boolean {
   }
 
   if (model.provider === 'doubao') {
-    return VISION_REGEX.test(model.name) || model.type?.includes('vision') || false
+    return VISION_REGEX.test(model.name) || false
   }
 
-  return VISION_REGEX.test(model.id) || model.type?.includes('vision') || false
+  return VISION_REGEX.test(model.id) || false
 }
 
 export function isReasoningModel(model: Model): boolean {
@@ -1673,10 +1673,10 @@ export function isReasoningModel(model: Model): boolean {
   }
 
   if (model.provider === 'doubao') {
-    return REASONING_REGEX.test(model.name) || model.type?.includes('reasoning') || false
+    return REASONING_REGEX.test(model.name) || false
   }
 
-  return REASONING_REGEX.test(model.id) || model.type?.includes('reasoning') || false
+  return REASONING_REGEX.test(model.id) || false
 }
 
 export function isSupportedModel(model: OpenAI.Models.Model): boolean {
